@@ -7,4 +7,4 @@ response = requests.get(url) # получаем ответ от сайта
 soup = BeautifulSoup(response.text, "lxml") # lxml - анализатор html кода
 data = soup.find("div", class_="quote")
 name = data.find("span", class_="text")
-print(name)
+print(name.text)
