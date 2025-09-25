@@ -5,6 +5,14 @@ from time import sleep
 headers = {"User-Agent":
            "Mozilla/5.0 (Windows NT 1; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0 (.NET CLR 89.0)"}
 
+def download(url):
+    resp = requests.get(url, headers=headers, stream=True) # картинка не целиком грузится в оперативку
+    r = open(r"C:\\Users\\Maria\\PyCharmMiscProject\\" + url.split("/")[-1], "wb") # путь куда записываем файл, wb - записывать байты
+    for value in resp.iter_content(chunk_size=1024*1024):
+        r.write(value)
+    r.close()
+
+
 def array():
     for j in range(1, 4):
         sleep(3)
@@ -34,7 +42,7 @@ def array():
 
 
 
-
+download("https://ooomalina.ru/upload/iblock/c0e/ujwbbiujxun2m0e2sfbatedhhjfucn95.png")
 
 
 
