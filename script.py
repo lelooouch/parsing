@@ -41,8 +41,8 @@ def array():
             yield quote, by, tag, desc
 
 
-
-download("https://ooomalina.ru/upload/iblock/c0e/ujwbbiujxun2m0e2sfbatedhhjfucn95.png")
+url = "https://ooomalina.ru/upload/iblock/c0e/ujwbbiujxun2m0e2sfbatedhhjfucn95.png"
+download(url)
 
 
 
